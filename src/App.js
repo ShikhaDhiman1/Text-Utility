@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar'
+import TextArea from './components/TextArea'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar
+        title="MyReactApp"
+        head1="About"
+        head2="Contact"
+        dropdown="Activities"
+        id="body"
+      />
+      <br />
+      <div className="container" id="body">
+        <center>
+          <TextArea title="Enter the text" id="textArea" />
+        </center>
+      </div>
+    </>
   );
 }
 
