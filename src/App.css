@@ -3,18 +3,19 @@
 
 body{
  font-family: 'Paprika', cursive;
- background-image: radial-gradient(coral,rgb(152, 235, 10));
+ /* background-image: radial-gradient(coral,rgb(152, 235, 10)); */
+ background-color:khaki;
 }
 
 h1{
   font-family: 'Abril Fatface', cursive;
-  color: rgb(172, 9, 9);
+  /* color: rgb(172, 9, 9); */
   font-size: 45px;
 }
 
-.navbar-brand, .nav-link{
+/* .navbar-brand, .nav-link{
   color: rgb(140, 3, 3);
-}
+} */
 .navbar-brand{
   font-weight: 900;
 }
