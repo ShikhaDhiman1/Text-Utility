@@ -1,15 +1,15 @@
 {
-  "files": {
-    "main.css": "/Text-Utility/static/css/main.21f46b2d.css",
-    "main.js": "/Text-Utility/static/js/main.a445ac42.js",
-    "static/js/787.7f320c1d.chunk.js": "/Text-Utility/static/js/787.7f320c1d.chunk.js",
-    "index.html": "/Text-Utility/index.html",
-    "main.21f46b2d.css.map": "/Text-Utility/static/css/main.21f46b2d.css.map",
-    "main.a445ac42.js.map": "/Text-Utility/static/js/main.a445ac42.js.map",
-    "787.7f320c1d.chunk.js.map": "/Text-Utility/static/js/787.7f320c1d.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.21f46b2d.css",
-    "static/js/main.a445ac42.js"
-  ]
+  "main.css": "/Text-Utility/static/css/main.40ae95b5.chunk.css",
+  "main.js": "/Text-Utility/static/js/main.cc1932bb.chunk.js",
+  "main.js.map": "/Text-Utility/static/js/main.cc1932bb.chunk.js.map",
+  "static/js/1.3a79397a.chunk.js": "/Text-Utility/static/js/1.3a79397a.chunk.js",
+  "static/js/1.3a79397a.chunk.js.map": "/Text-Utility/static/js/1.3a79397a.chunk.js.map",
+  "static/js/2.c642814f.chunk.js": "/Text-Utility/static/js/2.c642814f.chunk.js",
+  "static/js/2.c642814f.chunk.js.map": "/Text-Utility/static/js/2.c642814f.chunk.js.map",
+  "runtime~main.js": "/Text-Utility/static/js/runtime~main.3d48cf89.js",
+  "runtime~main.js.map": "/Text-Utility/static/js/runtime~main.3d48cf89.js.map",
+  "static/css/main.40ae95b5.chunk.css.map": "/Text-Utility/static/css/main.40ae95b5.chunk.css.map",
+  "index.html": "/Text-Utility/index.html",
+  "precache-manifest.dc4c6d89ddd1b84134ff061467161e5d.js": "/Text-Utility/precache-manifest.dc4c6d89ddd1b84134ff061467161e5d.js",
+  "service-worker.js": "/Text-Utility/service-worker.js"
 }
