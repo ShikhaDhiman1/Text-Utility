@@ -5,6 +5,7 @@ body{
  font-family: 'Paprika', cursive;
  /* background-image: radial-gradient(coral,rgb(152, 235, 10)); */
  background-color:khaki;
+ margin-bottom:30px;
 }
 
 h1{
@@ -79,6 +80,42 @@ ul.summary{
   border-radius: 10px;
 }
 
-.navbar-nav li, .navbar-nav{
+.nav-item, .navbar-nav:not(.dropdown-menu){
   margin-left: 10%;
+}
+
+.dropdown-item{
+  font-size: 15px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.previewText{
+  background-color: rgb(240, 230, 140, 0.6);
+  border: 1px solid;
+  padding:5px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+#textHere{
+  color: brown;
+}
+
+.carousel-inner{
+  max-width: 85%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 16px rgb(126, 113, 3);
+}
+
+.carousel-item img{
+  border-radius: 20px;
+  max-height:80vh;
+  object-fit: fill;
+}
+.carousel-control-next, .carousel-control-prev{
+  width:25%;
+}
+.cont-about{
+  
+  margin-top:-12px;
 }

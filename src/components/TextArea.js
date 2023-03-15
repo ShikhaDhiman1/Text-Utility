@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
+// import $ from 'jquery';
 
 export default function TextArea(props) {
   const [text, setText] = useState("Enter text");
@@ -21,15 +21,40 @@ export default function TextArea(props) {
     setText(text.toLowerCase());
   };
 
-  const color = () => {
+  const changeColor = () => {
     const textCol = document.getElementsByClassName("text-color");
     for (let i = 0; i < textCol.length; i++) {
       textCol[i].addEventListener("click", () => {
-        document.getElementById("textHere").style.color =
+        document.getElementById("textHere").style.color = ""+
           textCol[i].textContent.toLowerCase() + "";
       });
     }
   };
+  
+//   const colors = document.querySelectorAll("[id = 'text-colr']");
+//   for (let i = 0; i < colors.length; i++) {
+//       colors[i].addEventListener("click", () => {
+//         console.log("clicked")
+//         document.getElementById("textHere").style.color = ""+
+//           colors[i].textContent.toLowerCase() + "";
+//   });
+// }
+
+  // const changeColr = ()=>{
+  //   // console.log("Color");
+  //   // console.log($(this));
+  //   // const colr = $(this).textContent.toLowerCase();
+  //   // document.getElementById("textHere").style.color = colr;
+  //   const colors = document.querySelectorAll("[id = 'text-colr']");
+  //   console.log(colors);
+  // //   for (let i = 0; i < textCol.length; i++) {
+  // //     textCol[i].addEventListener("click", () => {
+  // //       document.getElementById("textHere").style.color = ""+
+  // //         textCol[i].textContent.toLowerCase() + "";
+  // //   });
+  // // }
+  // };
+
   const fontFamily = () => {
     const fontFam = document.getElementsByClassName("font-family");
     for (let i = 0; i < fontFam.length; i++) {
@@ -91,185 +116,206 @@ export default function TextArea(props) {
   };
   return (
     <>
-      <div>
-        <label
-          htmlFor="textHere"
-          id="label"
-          className={`form-label text-${
-            props.mode === "light" ? "dark" : "white"
+      <div className="container">
+        <center>
+          <div style={{ color: props.mode === "light" ? "black" : "white" }}>
+            <label htmlFor="textHere" id="label" className={`form-label `}>
+              <h1>Enter your text here</h1>
+            </label>
+            <textarea
+              className={`form-control mb-5 bg-${props.mode} 
           }`}
-        >
-          <h1>Enter your text here</h1>
-        </label>
-        <textarea
-          className={`form-control mb-5 bg-${props.mode} text-${
-            props.mode === "light" ? "dark" : "white"
-          }`}
-          id="textHere"
-          rows="8"
-          value={text}
-          onChange={textAreaChange}
-        ></textarea>
-        <div className="d-flex justify-content-center">
-          <button
-            className="btn btn-primary mx-4 my-3 px-5 py-2"
-            id="btn-upper"
-            onClick={upper}
-          >
-            To Upper Case
-          </button>
-          <button
-            className="btn btn-primary mx-4 my-3 px-5 py-2"
-            id="btn-lower"
-            onClick={lower}
-          >
-            To Lower Case
-          </button>
-        </div>
-        <div className="d-flex justify-content-center">
-          <button
-            className="btn btn-primary mx-3 my-3 px-5 py-2 text-color"
-            id="colr"
-            onMouseOver={color}
-          >
-            Red
-          </button>
-          <button
-            className="btn btn-primary mx-3 my-3 px-5 py-2 text-color"
-            id="colr"
-            onMouseOver={color}
-          >
-            Green
-          </button>
-          <button
-            className="btn btn-primary mx-3 my-3 px-5 py-2 text-color"
-            id="colr"
-            onMouseOver={color}
-          >
-            Blue
-          </button>
-        </div>
-        <div className="d-flex justify-content-center">
-          <button
-            className="btn btn-primary mx-3 my-3 px-5 py-2 font-family"
-            onMouseOver={fontFamily}
-          >
-            Monospace
-          </button>
-          <button
-            className="btn btn-primary mx-3 my-3 px-5 py-2 font-family"
-            onMouseOver={fontFamily}
-          >
-            Fantasy
-          </button>
-          <button
-            className="btn btn-primary mx-3 my-3 px-5 py-2 font-family"
-            onMouseOver={fontFamily}
-          >
-            Cursive
-          </button>
-        </div>
-        <div className="d-flex justify-content-center">
-          <button
-            className="btn btn-primary mx-3 my-3 px-5 py-2 font-size"
-            onMouseOver={fontSize}
-          >
-            15px
-          </button>
-          <button
-            className="btn btn-primary mx-3 my-3 px-5 py-2 font-size"
-            onMouseOver={fontSize}
-          >
-            20px
-          </button>
-          <button
-            className="btn btn-primary mx-3 my-3 px-5 py-2 font-size"
-            onMouseOver={fontSize}
-          >
-            25px
-          </button>
-        </div>
-        <div className="d-flex justify-content-center">
-          <button
-            className="btn btn-primary py-2 mx-3 my-3 px-5"
-            id="dmode"
-            onClick={props.handleMode}
-          >
-            Dark Mode
-          </button>
-          <button
-            className="btn btn-primary py-2 mx-3 my-3 px-5"
-            id="lmode"
-            onClick={props.handleMode}
-          >
-            Light Mode
-          </button>
-        </div>
-        <div className="d-flex justify-content-center">
-          <button
-            className="btn btn-primary mx-3 px-5 my-3 py-2"
-            id="copy"
-            onClick={copyText}
-          >
-            Copy Text
-          </button>
-          <button
-            className="btn btn-primary mx-3 px-5 my-3 py-2"
-            id="paste"
-            onClick={pasteText}
-          >
-            Paste Text
-          </button>
-          <button
-            className="btn btn-primary py-2 mx-3 my-3 px-5"
-            id="clrText"
-            onClick={clearText}
-          >
-            Clear Text
-          </button>
-        </div>
-        <div className="d-flex justify-content-center">
-          <button
-            className="btn btn-primary mx-3 px-5 my-3 py-2"
-            onClick={removeExtraSpace}
-          >
-            Remove Extra Spaces
-          </button>
-        </div>
-      </div>
-      <hr />
-      <div className="container my-5">
-        <h1 className={`text-${props.mode === "light" ? "dark" : "white"}`}>
-          Your text Summary:
-        </h1>
-        <br />
-        <br />
-        <div>
-          <ul className="summary">
-            <li>
-              <b>{words(text)}</b> words. <br />
-            </li>
-            <li>
-              <b>{text.length - (text.split(" ").length - 1)}</b> characters(
-              excluding white spaces). <br />
-            </li>
-            <li>
-              <b>{text.length}</b> characters( including white spaces).
-            </li>
-            <li>
-              <b>{text.split(". ").length}</b> sentence(s).
-            </li>
-            <li>
-              <b>
-                Time taken to read 125 words on an average is approx. 0.4
-                minutes.<i> Thus, </i> <br />
-              </b>
-              &nbsp;&nbsp;&nbsp;&nbsp; Time taken to read given {words(text)}{" "}
-              word(s) is/are
-              {(0.4 / 125) * text.split(" ").length} minute(s).
-            </li>
-          </ul>
-        </div>
+              style={{ color: props.mode === "light" ? "black" : "white" }}
+              id="textHere"
+              rows="8"
+              value={text}
+              onChange={textAreaChange}
+            ></textarea>
+            <div className="d-flex  flex-wrap justify-content-center">
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                }`}
+                id="btn-upper"
+                onClick={upper}
+              >
+                To Upper Case
+              </button>
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                }`}
+                id="btn-lower"
+                onClick={lower}
+              >
+                To Lower Case
+              </button>
+            </div>
+            <div className="d-flex  flex-wrap justify-content-center">
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                } text-color`}
+                // id="text-colr"
+                onMouseOver={changeColor}
+              >
+                Red
+              </button>
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                } text-color`}
+                onMouseOver={changeColor}
+                // id="text-colr"
+                // onClick={document.getElementById("textHere").style.color = this.textContent.toLowerCase()}
+              >
+                Green
+              </button>
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                } text-color`}
+                // id="text-colr"
+                onMouseOver={changeColor}
+              >
+                Blue
+              </button>
+            </div>
+            <div className="d-flex flex-wrap justify-content-center">
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                } font-family`}
+                onMouseOver={fontFamily}
+              >
+                Monospace
+              </button>
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                } font-family`}
+                onMouseOver={fontFamily}
+              >
+                Fantasy
+              </button>
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                } font-family`}
+                onMouseOver={fontFamily}
+              >
+                Cursive
+              </button>
+            </div>
+            <div className="d-flex flex-wrap justify-content-center">
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                } font-size`}
+                onMouseOver={fontSize}
+              >
+                15px
+              </button>
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                } font-size`}
+                onMouseOver={fontSize}
+              >
+                20px
+              </button>
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                } font-size`}
+                onMouseOver={fontSize}
+              >
+                25px
+              </button>
+            </div>
+            <div className="d-flex flex-wrap justify-content-center">
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                }`}
+                id="copy"
+                onClick={copyText}
+              >
+                Copy Text
+              </button>
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                }`}
+                id="paste"
+                onClick={pasteText}
+              >
+                Paste Text
+              </button>
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                }`}
+                id="clrText"
+                onClick={clearText}
+              >
+                Clear Text
+              </button>
+            </div>
+            <div className="d-flex flex-wrap justify-content-center">
+              <button
+                className={`btn btn-primary mx-4 my-3 px-5 py-2 ${
+                  props.mode === "light" ? "" : "btn-primary-light"
+                }`}
+                onClick={removeExtraSpace}
+              >
+                Remove Extra Spaces
+              </button>
+            </div>
+          </div>
+          <hr />
+          <div className="container my-5">
+            <h1 className={`text-${props.mode === "light" ? "dark" : "white"}`}>
+              Your text Summary:
+            </h1>
+            <br />
+            <br />
+            <div>
+              <ul className="summary">
+                <li>
+                  <b>{words(text)}</b> words. <br />
+                </li>
+                <li>
+                  <b>{text.length - (text.split(" ").length - 1)}</b>{" "}
+                  characters( excluding white spaces). <br />
+                </li>
+                <li>
+                  <b>{text.length}</b> characters( including white spaces).
+                </li>
+                <li>
+                  <b>{text.split(". ").length}</b> sentence(s).
+                </li>
+                <li>
+                  <b>
+                    Time taken to read 125 words on an average is approx. 0.4
+                    minutes.<i> Thus, </i> <br />
+                  </b>
+                  &nbsp;&nbsp;&nbsp;&nbsp; -&gt; Time taken to read given{" "}
+                  {words(text)} word(s) is/are
+                  {(0.4 / 125) * text.split(" ").length} minute(s).
+                </li>
+                <li>
+                  <b>Preview :</b>
+                  <br />
+                  <p className="previewText mt-4">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    {text === "" ? "Enter text to preview it" : text}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </center>
       </div>
     </>
   );
